@@ -58,9 +58,31 @@ int main() {
   // Skip to the temperature float
   cursor += sizeof "\"temperature\":" - 1;
 
-  // Read and convert to fahrenheit
-  double temp = atof(cursor) * 1.8 + 32;
+  // SI units are for nerds
+  double temp_nerd = atof(cursor) + 273.15;
+  // Celsius is for normal people
+  double temp_real = temp_nerd - 273.15;
+  // Fahrenheit is for patriots
+  double temp_dumb = temp_real * 1.8 + 32;
+  // Rankine is for pickmes
+  double temp_pickme = temp_real * 1.8 + 491.67;
+  // Delisle is for weirdos
+  double temp_weirdos = (100 - temp_real) * 1.5;
+  // Newtons are for physicists but no unambiguous conversion exists
+  // Réaumur is for the French
+  double temp_french = temp_real * 0.8;
+  // Rømer is for Farenheit apologists
+  double temp_farenheit_apologist = temp_real * 0.525 + 7.5;
+  // Wedgwood is for ceramists(?)
+  double temp_ceramist = temp_real / 24.86 - 10.82;
 
   // Done
-  printf("It is currently %.1f° Fahrenheit\n", temp);
+  printf("It is currently %.1f Kelvin\n", temp_nerd);
+  printf("It is currently %.1f° Celsius\n", temp_real);
+  printf("It is currently %.1f° Fahrenheit\n", temp_dumb);
+  printf("It is currently %.1f° Rankine\n", temp_pickme);
+  printf("It is currently %.1f° Delisle\n", temp_weirdos);
+  printf("It is currently %.1f° Réaumur\n", temp_french);
+  printf("It is currently %.1f° Rømer\n", temp_farenheit_apologist);
+  printf("It is currently %.1f° Wedgwood\n", temp_ceramist);
 }

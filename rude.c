@@ -7,7 +7,7 @@
 #include <unistd.h>
 
 const char msg[] =
-    "GET /v1/forecast?latitude=40.88&longitude=73.25&current_weather=true "
+    "GET /v1/forecast?latitude=40.88&longitude=-73.25&current_weather=true "
     "HTTP/1.0\r\n"
     "Host: api.open-meteo.com\r\n\r\n";
 const size_t msg_len = sizeof msg - 1;
